@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Habla con desconocidos</title>
+  <style>
+    .message {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="messages">
+    <!-- Aquí se mostrarán los mensajes -->
+  </div>
+
+  <form id="message-form">
+    <input type="text" id="message-input" placeholder="Escribe tu mensaje">
+    <button type="submit">Enviar</button>
+
+
+
+<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+    <button>Buscar persona</button>
+</a>
+
+
+    
+
+
+  </form>
+
+  <script>
+    // Función para enviar un mensaje
+    function sendMessage() {
+      var input = document.getElementById('message-input');
+      var message = input.value;
+
+      if (message.trim() !== '') {
+        var messageElement = document.createElement('div');
+        messageElement.classList.add('message');
+        messageElement.innerText = message;
+
+        var messagesContainer = document.getElementById('messages');
+        messagesContainer.appendChild(messageElement);
+
+        // Limpiar el campo de texto después de enviar el mensaje
+        input.value = '';
+      }
+    }
+
+    // Manejar el envío del formulario
+    var form = document.getElementById('message-form');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      sendMessage();
+    });
+  </script>
+</body>
+</html>
+
